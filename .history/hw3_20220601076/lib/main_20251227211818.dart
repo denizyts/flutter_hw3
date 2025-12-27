@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: .fromSeed(seedColor: Colors.blue),
       ),
-      home: const MyHomePage(title: 'HW4444 - 2022061076'),
+      home: const MyHomePage(title: 'HW3 - 2022061076'),
     );
   }
 }
@@ -27,6 +27,7 @@ class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
+
 enum big_drop_selection {all, text, check, drop}
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -55,7 +56,6 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: .start,
           children: [
             DropdownButton<big_drop_selection>(
-              value: _bigDropSelection,
               items: [
                   DropdownMenuItem(
                     value: big_drop_selection.all,
@@ -75,18 +75,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   )
                 ],
               onChanged: (value) {
-                setState(() {  
-                  _bigDropSelection = value!;
-                });
+                
               },
             ),
-            
-            ...switch (_bigDropSelection) {
-              big_drop_selection.text => [_getTextForm()],
-              big_drop_selection.check => [_getCheckBox()],
-              big_drop_selection.drop => [_getDropdown()],
-              big_drop_selection.all => [_getTextForm(), _getCheckBox(), _getDropdown()]
-            },
+            _getTextForm(),
+            _getCheckBox(),
+            _getDropdown(),
             _getElevatedButton(),
             _getResultColumn()
           ],
@@ -108,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   DropdownButton<bool> _getDropdown() {
     return DropdownButton<bool>(
-              value: _IsChecked,
+              value: _DropDownValue,
                 items: [
                   DropdownMenuItem(
                     value: true,
@@ -121,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
                 onChanged: (value){
                   setState(() {
-                    _IsChecked = value!;
+                    _DropDownValue = value!;
                   });
                 }
               );
@@ -146,11 +140,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Column _getResultColumn () {
     return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 for(String e in _sendedValues)
-                  Text(e),
-                Text((_IsChecked ? "true": "false") + " " + (_IsChecked ? "true": "false")),
+                  Text(e)
               ],
             );
   }

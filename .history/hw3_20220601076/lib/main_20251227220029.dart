@@ -150,7 +150,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 for(String e in _sendedValues)
                   Text(e),
-                Text((_IsChecked ? "true": "false") + " " + (_IsChecked ? "true": "false")),
+                Text((_IsChecked ? "true": "false") + " " + (_is ? "true": "false")),
               ],
             );
   }

@@ -32,7 +32,6 @@ enum big_drop_selection {all, text, check, drop}
 class _MyHomePageState extends State<MyHomePage> {
   
   bool _IsChecked = false;
-  bool _DropDownValue = false;
   final _textEditingController = TextEditingController();
   List _sendedValues = [];
   final _formKey = GlobalKey<FormState>();

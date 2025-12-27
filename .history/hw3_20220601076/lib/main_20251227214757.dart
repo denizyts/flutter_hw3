@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               onChanged: (value) {
                 setState(() {  
-                  _bigDropSelection = value!;
+                _bigDropSelection = value!;
                 });
               },
             ),
@@ -108,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   DropdownButton<bool> _getDropdown() {
     return DropdownButton<bool>(
-              value: _IsChecked,
+              value: _DropDownValue,
                 items: [
                   DropdownMenuItem(
                     value: true,
@@ -121,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
                 onChanged: (value){
                   setState(() {
-                    _IsChecked = value!;
+                    _DropDownValue = value!;
                   });
                 }
               );
@@ -146,11 +146,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Column _getResultColumn () {
     return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 for(String e in _sendedValues)
                   Text(e),
-                Text((_IsChecked ? "true": "false") + " " + (_IsChecked ? "true": "false")),
+                Text((_IsChecked ? "true": "false") + (_DropDownValue ? "true": "false")),
               ],
             );
   }
