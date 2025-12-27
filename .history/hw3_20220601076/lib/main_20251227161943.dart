@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   bool _DropDownValue = false;
   final _textEditingController = TextEditingController();
   List _sendedValues = [];
-  final _formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<Form>()
 
   @override
   Widget build(BuildContext context) {
@@ -52,28 +52,23 @@ class _MyHomePageState extends State<MyHomePage> {
           
           mainAxisAlignment: .start,
           children: [
-            Form(
-              key:_formKey,
-              child: 
-                TextFormField(
-                  decoration: 
-                    const InputDecoration(
-                      labelText: 'Text'
-                  ),
-                  controller: _textEditingController,
-                  validator: (value) {
-                    if(value == "" || value == null){
-                      return "INPUTCANNOT BE EMPTY";
-                    } 
-                    if(value!.length < 3){
-                      return "INPUT SIZE MUST BE GREATER THAN 3";
-                    }
-
-                    return null;
-                  },
-                  // key: _formKey
-                ),
+            TextFormField(
+              decoration: 
+                const InputDecoration(
+                  labelText: 'Text'
               ),
+              controller: _textEditingController,
+              validator: (value) {
+                if(value == "" || value == null){
+                  return "INPUTCANNOT BE EMPTY";
+                } 
+                if(value!.length < 3){
+                  return "INPUT SIZE MUST BE GREATER THAN 3";
+                }
+
+                return null;
+              },
+            ),
             Checkbox(
               value: _IsChecked, 
               onChanged: (value){
@@ -103,9 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: (){
                 setState(() {
-                  if(_formKey.currentState!.validate()){
+                  if(_)
                   _sendedValues.add(_textEditingController.text);
-                  }
                 });
               }, 
               child: 

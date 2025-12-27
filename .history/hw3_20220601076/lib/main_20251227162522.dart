@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                     return null;
                   },
-                  // key: _formKey
+                  key: _formKey
                 ),
               ),
             Checkbox(

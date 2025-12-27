@@ -52,28 +52,25 @@ class _MyHomePageState extends State<MyHomePage> {
           
           mainAxisAlignment: .start,
           children: [
-            Form(
-              key:_formKey,
-              child: 
-                TextFormField(
-                  decoration: 
-                    const InputDecoration(
-                      labelText: 'Text'
-                  ),
-                  controller: _textEditingController,
-                  validator: (value) {
-                    if(value == "" || value == null){
-                      return "INPUTCANNOT BE EMPTY";
-                    } 
-                    if(value!.length < 3){
-                      return "INPUT SIZE MUST BE GREATER THAN 3";
-                    }
-
-                    return null;
-                  },
-                  // key: _formKey
-                ),
+            Form(child: child)
+            TextFormField(
+              decoration: 
+                const InputDecoration(
+                  labelText: 'Text'
               ),
+              controller: _textEditingController,
+              validator: (value) {
+                if(value == "" || value == null){
+                  return "INPUTCANNOT BE EMPTY";
+                } 
+                if(value!.length < 3){
+                  return "INPUT SIZE MUST BE GREATER THAN 3";
+                }
+
+                return null;
+              },
+              key: _formKey
+            ),
             Checkbox(
               value: _IsChecked, 
               onChanged: (value){

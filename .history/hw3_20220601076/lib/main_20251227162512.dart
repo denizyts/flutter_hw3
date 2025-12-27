@@ -53,7 +53,6 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: .start,
           children: [
             Form(
-              key:_formKey,
               child: 
                 TextFormField(
                   decoration: 
@@ -71,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                     return null;
                   },
-                  // key: _formKey
+                  key: _formKey
                 ),
               ),
             Checkbox(
