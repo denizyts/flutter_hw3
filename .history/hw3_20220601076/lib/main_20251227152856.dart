@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             TextFormField(
               decoration: const InputDecoration(
-                labelText: 'Text'
+                labelText: 'deniz'
               ),
             ),
             Checkbox(
@@ -84,8 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: (){print("deniz");}, 
               child: 
                 Text(
-                  "Send",
-                  selectionColor: Colors.blue,
+                  "Send"
                 )
             )
           ],

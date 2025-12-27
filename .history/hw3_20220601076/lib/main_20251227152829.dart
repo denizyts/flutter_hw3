@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'hw3_20220601076',
       theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.blue),
+        colorScheme: .fromSeed(seedColor: Colors.red),
       ),
       home: const MyHomePage(title: 'HW3 - 2022061076'),
     );
@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             TextFormField(
               decoration: const InputDecoration(
-                labelText: 'Text'
+                labelText: 'deniz'
               ),
             ),
             Checkbox(
@@ -82,11 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               onPressed: (){print("deniz");}, 
-              child: 
-                Text(
-                  "Send",
-                  selectionColor: Colors.blue,
-                )
+              child: Text("Send")
             )
           ],
         ),
