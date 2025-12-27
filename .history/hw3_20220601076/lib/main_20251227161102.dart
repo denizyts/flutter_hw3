@@ -108,8 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Column(
               children: [
-                for(String e in _sendedValues)
-                  Text(e)
+                for(const e in _sendedValues)
               ],
             )
           ],

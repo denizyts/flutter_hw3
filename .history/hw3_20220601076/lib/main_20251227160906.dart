@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: (){
                 setState(() {
-                  _sendedValues.add(_textEditingController.text);
+                  
                 });
               }, 
               child: 
@@ -108,8 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Column(
               children: [
-                for(String e in _sendedValues)
-                  Text(e)
+
               ],
             )
           ],

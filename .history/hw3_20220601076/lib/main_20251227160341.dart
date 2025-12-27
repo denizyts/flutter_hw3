@@ -33,7 +33,6 @@ class _MyHomePageState extends State<MyHomePage> {
   bool _IsChecked = false;
   bool _DropDownValue = false;
   final _textEditingController = TextEditingController();
-  List _sendedValues = [];
 
   @override
   Widget build(BuildContext context) {
@@ -58,14 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               controller: _textEditingController,
               validator: (value) {
-                if(value == "" || value == null){
-                  return "INPUTCANNOT BE EMPTY";
-                } 
-                if(value!.length < 3){
-                  return "INPUT SIZE MUST BE GREATER THAN 3";
-                }
-
-                return null;
+                if
               },
             ),
             Checkbox(
@@ -95,11 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
               }
             ),
             ElevatedButton(
-              onPressed: (){
-                setState(() {
-                  _sendedValues.add(_textEditingController.text);
-                });
-              }, 
+              onPressed: (){print("deniz");}, 
               child: 
                 Text(
                   "Send",
@@ -108,8 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Column(
               children: [
-                for(String e in _sendedValues)
-                  Text(e)
+
               ],
             )
           ],

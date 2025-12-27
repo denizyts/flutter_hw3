@@ -107,9 +107,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 )
             ),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                for(String e in _sendedValues)
-                  Text(e)
+                for(String e in _sendedValues){
+                  Text(e);
+                }
               ],
             )
           ],

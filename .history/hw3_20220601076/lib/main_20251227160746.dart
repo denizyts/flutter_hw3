@@ -33,7 +33,6 @@ class _MyHomePageState extends State<MyHomePage> {
   bool _IsChecked = false;
   bool _DropDownValue = false;
   final _textEditingController = TextEditingController();
-  List _sendedValues = [];
 
   @override
   Widget build(BuildContext context) {
@@ -96,10 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               onPressed: (){
-                setState(() {
-                  _sendedValues.add(_textEditingController.text);
-                });
-              }, 
+                , 
               child: 
                 Text(
                   "Send",
@@ -108,8 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Column(
               children: [
-                for(String e in _sendedValues)
-                  Text(e)
+
               ],
             )
           ],
